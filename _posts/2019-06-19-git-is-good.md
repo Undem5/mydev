@@ -46,8 +46,8 @@ d10f77c4e766705ab36c7f31dc47b0c5056666bb (HEAD -> master) Edited files
 6e824db5ef3b0fa2eb2350f63a9f0fdd9cc7b0bf edited files
 root@Host:~/Téléchargements/gitIsGood/.git# 
 
-
 ```
+
 We can see the HEAD is pointing to the last commit which is indicated in the logs.
 The command ``` git cat-file -p HASH``` allows us to see the content of an object
 
@@ -86,14 +86,13 @@ root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p 7418780824c8888300
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p 8684e6896a395765ebadbdf5959657f5541e4b4b
 flag{protect_your_git}
 root@Host:~/Téléchargements/gitIsGood/.git# 
-
 ```
+
 So we look into the second commit and repeat the same actions and found the flag.
 
 Another way if you're lazy:
 
-``` 
-
+```
 root@Host:~/Téléchargements/gitIsGood/.git# git show 195dd65b9f5130d5f8a435c5995159d4d760741b
 commit 195dd65b9f5130d5f8a435c5995159d4d760741b
 Author: LaScalaLuke <lascala.luke@gmail.com>
@@ -109,17 +108,15 @@ index c5250d0..8684e68 100644
 -flag{REDACTED}
 +flag{protect_your_git}
 root@Host:~/Téléchargements/gitIsGood/.git# 
-
 ``̀
 
 The command ```git show``` shows what is added/deleted into the files. Here we only have one file so that's easy to see.
 
-̀ 
 ### References:
 
 Really good articles that helped me:
 
-https://jwiegley.github.io/git-from-the-bottom-up/
-https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/
-https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
+* [Git from the bottom up - Book Open Source !](https://jwiegley.github.io/git-from-the-bottom-up/)
+* [Why you should not expose git](https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/)
+* [the Git Bible - Internals](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
 
