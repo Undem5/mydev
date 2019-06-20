@@ -111,8 +111,8 @@ index c5250d0..8684e68 100644
 @@ -1 +1 @@
 -flag{REDACTED}
 +flag{protect_your_git}
+```
 
-``̀
 
 The command ```git show``` shows what is added/deleted into the files. Here we only have one file so that's easy to see.
 
