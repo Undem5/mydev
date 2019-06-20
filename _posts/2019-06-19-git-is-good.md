@@ -33,6 +33,7 @@ So If I do :
 ```
 root@Host:~/Téléchargements/gitIsGood/.git# cat refs/heads/master 
 d10f77c4e766705ab36c7f31dc47b0c5056666bb
+
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p d10f77c4e766705ab36c7f31dc47b0c5056666bb
 tree 05eb4df96314881123c371fccb7cc11fa9a9dba9
 parent 195dd65b9f5130d5f8a435c5995159d4d760741b
@@ -40,12 +41,13 @@ author LaScalaLuke <lascala.luke@gmail.com> 1477852398 -0400
 committer LaScalaLuke <lascala.luke@gmail.com> 1477852398 -0400
 
 Edited files
+
 root@Host:~/Téléchargements/gitIsGood/.git# git log --pretty=oneline
 d10f77c4e766705ab36c7f31dc47b0c5056666bb (HEAD -> master) Edited files
 195dd65b9f5130d5f8a435c5995159d4d760741b Edited files
 6e824db5ef3b0fa2eb2350f63a9f0fdd9cc7b0bf edited files
-root@Host:~/Téléchargements/gitIsGood/.git# 
 
+root@Host:~/Téléchargements/gitIsGood/.git# 
 ```
 
 We can see the HEAD is pointing to the last commit which is indicated in the logs.
@@ -64,11 +66,12 @@ committer LaScalaLuke <lascala.luke@gmail.com> 1477852398 -0400
 Edited files
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p 05eb4df96314881123c371fccb7cc11fa9a9dba9
 100644 blob c5250d0c96b529c78191ac000f85ca165585e73c	flag.txt
+
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p c5250d0c96b529c78191ac000f85ca165585e73c
 flag{REDACTED}
+
 root@Host:~/Téléchargements/gitIsGood/.git# cat ../flag.txt 
 flag{REDACTED}
-
 ```
 So we looked into the tree of the last commit. We got a blob object corresponding to our file flag.txt. Looking into this file shows us that the owner modify the content of the flag to flag{REDACTED} like we see in the file we have.
 So we need to look before:
@@ -83,9 +86,9 @@ committer LaScalaLuke <lascala.luke@gmail.com> 1477852364 -0400
 Edited files
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p 7418780824c88883006d6b6084fc3550c5b9bc3f
 100644 blob 8684e6896a395765ebadbdf5959657f5541e4b4b	flag.txt
+
 root@Host:~/Téléchargements/gitIsGood/.git# git cat-file -p 8684e6896a395765ebadbdf5959657f5541e4b4b
-flag{protect_your_git}
-root@Host:~/Téléchargements/gitIsGood/.git# 
+flag{protect_your_git} 
 ```
 
 So we look into the second commit and repeat the same actions and found the flag.
@@ -107,7 +110,6 @@ index c5250d0..8684e68 100644
 @@ -1 +1 @@
 -flag{REDACTED}
 +flag{protect_your_git}
-root@Host:~/Téléchargements/gitIsGood/.git# 
 ``̀
 
 The command ```git show``` shows what is added/deleted into the files. Here we only have one file so that's easy to see.
