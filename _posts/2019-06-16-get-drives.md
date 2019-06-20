@@ -2,7 +2,6 @@
 category: Drives
 path: '/drives'
 title: 'Get drives'
-type: 'GET'
 
 layout: nil
 ---
