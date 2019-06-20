@@ -96,7 +96,6 @@ So we look into the second commit and repeat the same actions and found the flag
 Another way if you're lazy:
 
 ```
-
 root@Host:~/Téléchargements/gitIsGood/.git# git show 195dd65b9f5130d5f8a435c5995159d4d760741b
 commit 195dd65b9f5130d5f8a435c5995159d4d760741b
 Author: LaScalaLuke <lascala.luke@gmail.com>
@@ -112,6 +111,7 @@ index c5250d0..8684e68 100644
 -flag{REDACTED}
 +flag{protect_your_git}
 ```
+
 
 
 The command ```git show``` shows what is added/deleted into the files. Here we only have one file so that's easy to see.
